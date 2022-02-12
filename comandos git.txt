@@ -1,0 +1,26 @@
+1. Instalar GIT  (https://git-scm.com/)
+    > git config --global user.name "cristian"
+    > git config --global user.email "micorreo@gmail.com"
+
+2. Crear una cuenta en alguna empresa (GITHUB, GitLab, BitBucket)
+-----------------------------------------------------------------
+Comandos de GIT
+ si existe un repositorio (clonar)
+1.1 git clone https://...
+ si no existe un repositorio (inicializar)
+1.2 
+    > git init
+
+2. verificar el archivo (.gitignore, README.md) (opcional)
+
+3. 
+> git add .
+4. 
+> git commit -m "proyecto base Laravel 8"
+
+5.Subir los cambios al repositorio remoto (GitHub)
+> git remote add origin https://github.com/cchura94/proyecto-applaravel.git
+
+> git push origin master
+
+
