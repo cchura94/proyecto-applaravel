@@ -1,0 +1,20 @@
+1. Sistema de Ventas (Producto, Categoria, Pedido, Cliente, Personal, Proveedor, User, Role)
+2. Control de Personal (User, Personal, Control, Repartición, Role)
+3. Activos fijos (Item-Activo, Encargado, Personal, Role)
+4. Soporte Tecnico 
+5. Ecommerce (Producto, Categoria, Role)
+
+---------------- SPATIE - LARATRUST  ------------------------
+User - Role - Permiso - RolePermiso - PermisoUser - RoleUser 
+
+
+----------------- MIGRACIONES Y MODELS ---------------------
+php artisan make:model Categoria -m
+php artisan make:model Producto -m
+php artisan make:model Persona -m
+php artisan make:model Cliente -a
+php artisan make:model Pedido -m
+php artisan make:model Proveedor -m
+
+php artisan make:migration create_pedido_producto_table
+php artisan make:migration create_proveedor_producto_table
