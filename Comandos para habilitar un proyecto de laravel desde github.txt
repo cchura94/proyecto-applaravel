@@ -1,0 +1,22 @@
+Comandos para habilitar un proyecto de github
+
+1. clonar o descrgar del repositorio
+  - https://github.com/cchura94/proyecto-applaravel
+2. actualizar las dependencias del proyecto en la consola
+ > composer update
+3. clonar el archivo (.env.example) y renombrar a (.env)
+4. generar la llave unica (key) 
+ > php artisan key:generate
+5. configuración de base de datos
+ - crear una base de datos (mysql o pgsql) : (laravel_proyectoapp)
+ > agregar la configuracion en (.env)
+
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=laravel_proyectoapp
+        DB_USERNAME=root
+        DB_PASSWORD=
+
+6. Migramos
+> php artisan migrate
