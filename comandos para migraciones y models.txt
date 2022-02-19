@@ -18,3 +18,12 @@ php artisan make:model Proveedor -m
 
 php artisan make:migration create_pedido_producto_table
 php artisan make:migration create_proveedor_producto_table
+
+
+-------------------- CONTROLADORES ----------------------
+php artisan make:controller CategoriaController -r
+php artisan make:controller ProductoController -r
+php artisan make:controller PersonaController -r
+php artisan make:controller ClienteController -r
+php artisan make:controller PedidoController -r
+php artisan make:controller ProveedorController -r
