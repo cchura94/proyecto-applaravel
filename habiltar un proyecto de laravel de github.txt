@@ -1,0 +1,18 @@
+1. Clonar o descargar el repositorio
+git clone https://github.com/cchura94/proyecto-larawire.git
+
+2. Actualizar las dependencias de composer
+
+    > composer update
+
+3. clonar el archivo (.env.example) y renombrar a (.env)
+
+4. generar una nueva llave key para APP_KEY
+
+    > php artisan key:generate
+
+5. configurar y crear la base de datos en (.env)
+
+6. migrar
+
+    > php artisan migrate

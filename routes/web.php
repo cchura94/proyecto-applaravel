@@ -28,8 +28,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum'])->prefix("admin")->group(function(){ 
+    
+    Route::get("/", function(){
+        return view("admin.index");
+    });
 
-Route::middleware(['auth:sanctum'])->prefix("admin")->group(function(){
+    Route::get("/producto/{id}/ingresos", [ProductoController::class, "registro_ingresos"])->name("producto_ingresos");
+    Route::post("/producto/asignar_cantidad", [ProductoController::class, "asignar_cantidad"])->name("asignar_cantidad");
     
     Route::resource("categoria", CategoriaController::class);
     Route::resource("persona", PersonaController::class);

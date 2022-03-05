@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Proveedor;
 
 class ProveedorController extends Controller
 {
@@ -13,7 +14,9 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        //
+        $proveedores = Proveedor::all();
+
+        return view("admin.proveedor.index", compact("proveedores"));
     }
 
     /**
@@ -34,7 +37,22 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validar
+        $request->validate([
+            "razon_social" =>"required|max:100",
+            "telefono" => "required",
+            "datos_contacto" => "required|max:150"
+        ]);
+
+        $prov = new Proveedor();
+        $prov->razon_social = $request->razon_social;
+        $prov->telefono = $request->telefono;
+        $prov->direccion = $request->direccion;
+        $prov->datos_contacto = $request->datos_contacto;
+        $prov->pais = $request->pais;
+        $prov->save();
+
+        return redirect("/admin/proveedor");
     }
 
     /**

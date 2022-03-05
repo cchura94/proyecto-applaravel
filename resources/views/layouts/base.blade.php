@@ -27,10 +27,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="/" class="nav-link">INICIO</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="/admin" class="nav-link">ADMIN</a>
       </li>
     </ul>
 
@@ -160,9 +160,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/admin" class="brand-link">
       <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png' ) }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">SIS Ventas</span>
     </a>
 
     <!-- Sidebar -->
@@ -203,7 +203,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Starter Pages
+                Admin
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -211,13 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="#" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                  <p>ADMINISTRADOR</p>
                 </a>
               </li>
             </ul>
@@ -245,14 +239,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
+          
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('producto.index') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
+                Productos
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                INGRESO PRODUCTOS
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('producto_ingresos', 1) }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ingresos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('proveedor.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Proveedores</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
