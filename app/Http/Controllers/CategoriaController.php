@@ -7,6 +7,14 @@ use App\Models\Categoria;
 
 class CategoriaController extends Controller
 {
+    public function __construct() {
+        //$this->middleware('can:listar-categoria|mostrar-categoria|editar-categoria|crear-categoria|eliminar-categoria')->only("index");
+        $this->middleware('can:listar-categoria', ['only' => 'index']);
+        $this->middleware('can:crear-categoria', ['only' => 'create','store']);
+        $this->middleware('can:editar-categoria', ['only' => 'edit','update']);
+        $this->middleware('can:eliminar-categoria', ['only' => 'destroy']);
+        
+    }
     /**
      * Display a listing of the resource.
      *

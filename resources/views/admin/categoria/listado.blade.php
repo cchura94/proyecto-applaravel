@@ -8,7 +8,10 @@
 
     <div class="col-lg-12">
 
-        <a href="{{route('categoria.create')}}" class="btn btn-primary">Nueva Categoria</a>
+    @can("crear-categoria")
+    <a href="{{route('categoria.create')}}" class="btn btn-primary">Nueva Categoria</a>
+    @endcan
+        
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <h5 class="card-title">Lista de Categoria</h5>
@@ -40,10 +43,12 @@
                             <td> {{ $cat->detalle }}</td>
                             <td>{{ $cat->estado }}</td>
                             <td>
+                                @can("editar-categoria")
                                 <a href="{{ route('categoria.edit', $cat->id) }}" class="btn btn-warning">
                                     <i class="fa fa-edit"></i>
                                 </a>
-
+                                @endcan
+                                @can("eliminar-categoria")
                                 <!-- Button trigger modal -->
 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar{{$cat->id}}">
   <i class="fa fa-trash"></i>
@@ -73,6 +78,7 @@
     </div>
   </div>
 </div>
+@endcan
                             </td>
                         </tr>
                         @endforeach

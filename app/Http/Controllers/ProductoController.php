@@ -9,6 +9,13 @@ use App\Models\Proveedor;
 
 class ProductoController extends Controller
 {
+    public function __construct() {
+        $this->middleware('can:listar-producto', ['only' => 'index']);
+        $this->middleware('can:crear-producto', ['only' => 'create','store']);
+        $this->middleware('can:editar-producto', ['only' => 'edit','update']);
+        $this->middleware('can:eliminar-producto', ['only' => 'destroy']);
+        
+    }
     /**
      * Display a listing of the resource.
      *
